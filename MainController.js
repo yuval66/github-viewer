@@ -23,6 +23,13 @@
             }
             $location.path("/user/" + username);
         };
+        
+        $scope.onchanged = function() {
+            if(countdownInterval)    {
+                $interval.cancel(countdownInterval);
+                $scope.countdown = null;
+            }
+        }
 
         $scope.username = "robi-y";
         $scope.countdown = 10;
